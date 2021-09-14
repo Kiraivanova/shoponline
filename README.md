@@ -1,5 +1,5 @@
 # shoponlines
-django_heroku
-gunicorn
-django
-markdown
+django_heroku,
+gunicorn,
+django,
+markdown,
