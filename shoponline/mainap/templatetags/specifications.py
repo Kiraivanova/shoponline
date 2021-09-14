@@ -1,0 +1,60 @@
+from django import template
+from django.utils.safestring import mark_safe
+
+
+register = template.Library()
+
+
+TABLE_HEAD = """
+                <table class="table">
+                  <tbody>
+             """
+
+TABLE_TAIL = """
+                  </tbody>
+                </table>
+             """
+
+TABLE_CONTENT = """
+                    <tr>
+                      <td>{name}</td>
+                      <td>{value}</td>
+                    </tr>
+                """
+
+
+PRODUCT_SPEC = {
+    'plate': {
+        'Количество персон на': 'Number_of_person_the',
+        'Артикул': 'Article_number',
+        'Цвет': 'Colour',
+        'Упаковка': 'Packaging',
+        'Коллекция': 'Collection',
+        'Материал': 'Material',
+        'Страна производитель': 'Country_of_origin'
+
+    },
+    'tableware': {
+        'Количество персон на': 'Number_of_person',
+        'Артикул': 'Article_number',
+        'Цвет': 'Colour',
+        'Упаковка': 'Packaging',
+        'Коллекция': 'Collection',
+        'Материал': 'Material',
+        'Страна производитель': 'Country_of_origin'
+    }
+}
+
+
+def get_product_spec(product, model_name):
+    table_content = ''
+    for name, value in PRODUCT_SPEC[model_name].items():
+        table_content += TABLE_CONTENT.format(name=name, value=getattr(product, value))
+    return table_content
+
+
+@register.filter
+def product_spec(product):
+    model_name = product.__class__._meta.model_name
+    return mark_safe(TABLE_HEAD + get_product_spec(product, model_name) + TABLE_TAIL)
+

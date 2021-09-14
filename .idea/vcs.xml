@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/django-payment-webmoney" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/shoponline/django-payment-webmoney" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/shoponline/django-robokassa" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/shoponline/mainap/yookassa-sdk-python" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/shoponline/yookassa-sdk-python" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/yookassa-sdk-python" vcs="Git" />
+  </component>
+</project>
