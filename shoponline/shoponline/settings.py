@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-k+e_8^uov!v2vum%-uu^%74s3-#-@=!km68%yu0g1gyzb=f)a2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['herokuappname.herokuapp.com']
 
 
 # Application definition
@@ -40,20 +40,23 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'mainap',
     'crispy_forms',
-    'yoomoney'
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'shoponline.urls'
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 TEMPLATES = [
     {
@@ -122,7 +125,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+PROJECT_ROOT = os.path.join(os.path.abspath(__file__))
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -135,6 +139,10 @@ STATICFILES_DIRS = (
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 django_heroku.settings(locals())
+
+import dj_database_url
+prod_db  =  dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(prod_db)
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
