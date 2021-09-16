@@ -1,63 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="78eb5e79-baff-4f19-86ea-71d7a63f92f9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shoponline.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shoponline/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/shoponline/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shoponline/mainap/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shoponline/media/Набор_24-х_предметный_столовый_Ариета.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shoponline/media/Набор_столовых_приборов_на_6прес.24пред._CROISE.png" beforeDir="false" afterPath="$PROJECT_DIR$/shoponline/media/Набор_столовых_приборов_на_6прес.24пред._CROISE.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shoponline/media/Набор_столовых_приборов_на_6прес.24пред._CROISE_7OnSZPB.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shoponline/media/Набор_столовых_приборов_на_6прес.24пред._CROISE_7QngeSb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shoponline/media/Набор_столовых_приборов_на_6прес.24пред._CROISE_937JNhP.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shoponline/media/Набор_столовых_приборов_на_6прес.24пред._CROISE_9JozzK5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shoponline/media/Набор_столовых_приборов_на_6прес.24пред._CROISE_CFIBAkc.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shoponline/media/Набор_столовых_приборов_на_6прес.24пред._CROISE_GYqUdiK.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shoponline/media/Набор_столовых_приборов_на_6прес.24пред._CROISE_JpBL1XS.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shoponline/media/Набор_столовых_приборов_на_6прес.24пред._CROISE_Kx4N2L8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shoponline/media/Набор_столовых_приборов_на_6прес.24пред._CROISE_NDhGRky.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shoponline/media/Набор_столовых_приборов_на_6прес.24пред._CROISE_Rv0lybp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shoponline/media/Набор_столовых_приборов_на_6прес.24пред._CROISE_fv7PmFV.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shoponline/media/Набор_столовых_приборов_на_6прес.24пред._CROISE_jYgccHs.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shoponline/media/Салатник_13см._Аляска_2727_QZQcLCO.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shoponline/media/Салатник_13см._Аляска_2727_Qn4dElB.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shoponline/media/Салатник_13см._Аляска_2727_ccBqFo3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shoponline/media/Салатник_13см._Аляска__2731.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shoponline/media/Салатник_13см._Аляска__2731_2asTgrd.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shoponline/media/Салатник_13см._Аляска__2731_BFuszcZ.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shoponline/media/Салатник_13см._Аляска__2731_N4PgHkF.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shoponline/media/Салатник_13см._Аляска__2731_r4LapWG.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shoponline/media/Салатник_17см._Аляска__2731_z7LM7Ei.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shoponline/media/Севриз_столовый_на_6_перс._25_пред._Аляска_2731.png" beforeDir="false" afterPath="$PROJECT_DIR$/shoponline/media/Севриз_столовый_на_6_перс._25_пред._Аляска_2731.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shoponline/media/Севриз_столовый_на_6_перс._25_пред._Аляска_2731_KmfLOhI.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shoponline/media/Севриз_столовый_на_6_перс._25_пред._Аляска_2731_MudSEYn.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shoponline/media/Севриз_столовый_на_6_перс._25_пред._Аляска_2731_WXYcZJ4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shoponline/media/Севриз_столовый_на_6_перс._25_пред._Аляска_2731_e5XvF99.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shoponline/media/Сервиз_столовый_на_6перс.25пред._Бернадот_белый_311011.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shoponline/media/Сервиз_столовый_на_6перс.25пред._Бернадот_белый_4Ie4cHS.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shoponline/media/Сервиз_столовый_на_6перс.25пред._Бернадот_белый_KbgLVNZ.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shoponline/media/Сервиз_столовый_на_6перс.25пред._Бернадот_белый_Lwc98lh.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shoponline/media/Сервиз_столовый_на_6перс.25пред._Бернадот_белый_R6rzsTW.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shoponline/media/Сервиз_столовый_на_6перс.25пред._Бернадот_белый_RWUFOqK.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shoponline/media/Сервиз_столовый_на_6перс.25пред._Бернадот_белый_Ynwx9VU.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shoponline/media/Сервиз_столовый_на_6перс.25пред._Бернадот_белый_rOItwqA.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shoponline/media/Сервиз_столовый_на_6перс.25пред._Бернадот_белый_t9tIX9J.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shoponline/media/Сервиз_столовый_на_6перс.25пред._Бернадот_белый_uUXOHj5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shoponline/media/Сервиз_столовый_на_6перс.25пред._Бернадот_белый_z1k3Ahp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shoponline/media/Сервиз_чайно-столовый_Белиссима_золото_40_предметов_на_6_персон_Леандер_Форма_Соната.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shoponline/media/Сервиз_чайно-столовый_Белиссима_золото_40_предметов_на_6_персон_Леандер_Форма_Соната_18Ufhog.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shoponline/media/Сервиз_чайно-столовый_Белиссима_золото_40_предметов_на_6_персон_Леандер_Форма_Соната_1ZGSLIC.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shoponline/media/Чайник__1.15_л._Аляска___2731_I7Ps0YU.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shoponline/shoponline/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/shoponline/shoponline/settings.py" afterDir="false" />
-    </list>
+    <list default="true" id="78eb5e79-baff-4f19-86ea-71d7a63f92f9" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
