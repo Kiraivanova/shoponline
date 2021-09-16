@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="78eb5e79-baff-4f19-86ea-71d7a63f92f9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shoponline.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shoponline/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/shoponline/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shoponline/mainap/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shoponline/media/Набор_24-х_предметный_столовый_Ариета.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shoponline/media/Набор_столовых_приборов_на_6прес.24пред._CROISE.png" beforeDir="false" afterPath="$PROJECT_DIR$/shoponline/media/Набор_столовых_приборов_на_6прес.24пред._CROISE.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shoponline/media/Набор_столовых_приборов_на_6прес.24пред._CROISE_7OnSZPB.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shoponline/media/Набор_столовых_приборов_на_6прес.24пред._CROISE_7QngeSb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shoponline/media/Набор_столовых_приборов_на_6прес.24пред._CROISE_937JNhP.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shoponline/media/Набор_столовых_приборов_на_6прес.24пред._CROISE_9JozzK5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shoponline/media/Набор_столовых_приборов_на_6прес.24пред._CROISE_CFIBAkc.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shoponline/media/Набор_столовых_приборов_на_6прес.24пред._CROISE_GYqUdiK.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shoponline/media/Набор_столовых_приборов_на_6прес.24пред._CROISE_JpBL1XS.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shoponline/media/Набор_столовых_приборов_на_6прес.24пред._CROISE_Kx4N2L8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shoponline/media/Набор_столовых_приборов_на_6прес.24пред._CROISE_NDhGRky.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shoponline/media/Набор_столовых_приборов_на_6прес.24пред._CROISE_Rv0lybp.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shoponline/media/Набор_столовых_приборов_на_6прес.24пред._CROISE_fv7PmFV.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shoponline/media/Набор_столовых_приборов_на_6прес.24пред._CROISE_jYgccHs.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shoponline/media/Салатник_13см._Аляска_2727_QZQcLCO.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shoponline/media/Салатник_13см._Аляска_2727_Qn4dElB.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shoponline/media/Салатник_13см._Аляска_2727_ccBqFo3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shoponline/media/Салатник_13см._Аляска__2731.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shoponline/media/Салатник_13см._Аляска__2731_2asTgrd.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shoponline/media/Салатник_13см._Аляска__2731_BFuszcZ.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shoponline/media/Салатник_13см._Аляска__2731_N4PgHkF.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shoponline/media/Салатник_13см._Аляска__2731_r4LapWG.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shoponline/media/Салатник_17см._Аляска__2731_z7LM7Ei.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shoponline/media/Севриз_столовый_на_6_перс._25_пред._Аляска_2731.png" beforeDir="false" afterPath="$PROJECT_DIR$/shoponline/media/Севриз_столовый_на_6_перс._25_пред._Аляска_2731.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shoponline/media/Севриз_столовый_на_6_перс._25_пред._Аляска_2731_KmfLOhI.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shoponline/media/Севриз_столовый_на_6_перс._25_пред._Аляска_2731_MudSEYn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shoponline/media/Севриз_столовый_на_6_перс._25_пред._Аляска_2731_WXYcZJ4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shoponline/media/Севриз_столовый_на_6_перс._25_пред._Аляска_2731_e5XvF99.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shoponline/media/Сервиз_столовый_на_6перс.25пред._Бернадот_белый_311011.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shoponline/media/Сервиз_столовый_на_6перс.25пред._Бернадот_белый_4Ie4cHS.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shoponline/media/Сервиз_столовый_на_6перс.25пред._Бернадот_белый_KbgLVNZ.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shoponline/media/Сервиз_столовый_на_6перс.25пред._Бернадот_белый_Lwc98lh.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shoponline/media/Сервиз_столовый_на_6перс.25пред._Бернадот_белый_R6rzsTW.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shoponline/media/Сервиз_столовый_на_6перс.25пред._Бернадот_белый_RWUFOqK.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shoponline/media/Сервиз_столовый_на_6перс.25пред._Бернадот_белый_Ynwx9VU.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shoponline/media/Сервиз_столовый_на_6перс.25пред._Бернадот_белый_rOItwqA.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shoponline/media/Сервиз_столовый_на_6перс.25пред._Бернадот_белый_t9tIX9J.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shoponline/media/Сервиз_столовый_на_6перс.25пред._Бернадот_белый_uUXOHj5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shoponline/media/Сервиз_столовый_на_6перс.25пред._Бернадот_белый_z1k3Ahp.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shoponline/media/Сервиз_чайно-столовый_Белиссима_золото_40_предметов_на_6_персон_Леандер_Форма_Соната.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shoponline/media/Сервиз_чайно-столовый_Белиссима_золото_40_предметов_на_6_персон_Леандер_Форма_Соната_18Ufhog.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shoponline/media/Сервиз_чайно-столовый_Белиссима_золото_40_предметов_на_6_персон_Леандер_Форма_Соната_1ZGSLIC.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shoponline/media/Чайник__1.15_л._Аляска___2731_I7Ps0YU.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shoponline/shoponline/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/shoponline/shoponline/settings.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProjectId" id="1yCH3ULpexv0VqnegPSBGxfp3YR" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/venv" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\georg\PycharmProjects\shoponline\venv" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="manage" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="shoponline" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/shoponline" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/shoponline/manage.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.manage" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="78eb5e79-baff-4f19-86ea-71d7a63f92f9" name="Default Changelist" comment="" />
+      <created>1631748452082</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1631748452082</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
