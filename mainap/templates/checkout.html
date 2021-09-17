@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<h3 class="text-center mt-5 mb-5">Оформление заказа</h3>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Наименование</th>
+      <th scope="col">Изображение</th>
+      <th scope="col">Цена</th>
+      <th scope="col">Кол-во</th>
+        <th scope="col">Общая цена</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for item in cart.products.all %}
+    <tr>
+      <th scope="row">{{ item.content_object.title }}</th>
+      <td class="w-25"><img src="{{ item.content_object.image.url }}" class="img-fluid"></td>
+      <td>{{ item.content_object.price }} руб.</td>
+      <td>
+        <td>{{ item.final_price }} руб.</td>
+    </tr>
+  {% endfor %}
+  <tr>
+    <td colspan="2"></td>
+    <td>Итого</td>
+    <td>{{ cart.total_products }}</td>
+    <td><strong>{{ cart.final_price }} руб.</strong></td>
+  </tr>
+  </tbody>
+</table>
+<hr>
+<h3 class="text-center mt-5 mb-5">Форма заказа</h3>
+<form action="{% url 'make_order' %}" method="POST">
+  {% csrf_token %}
+  {{ form|crispy }}
+  <input type="submit" class="btn btn-success btn-block mb-3" values="Оформить заказ">
+</form>
+
+
+<iframe src="https://yoomoney.ru/quickpay/shop-widget?writer=seller&targets=%D0%BE%D0%BF%D0%BB%D0%B0%D1%82%D0%B0&targets-hint=&default-sum={{ cart.final_price }}&button-text=12&payment-type-choice=on&hint=&successURL=&quickpay=shop&account=4100117147837609&" width="422" height="220" frameborder="0" allowtransparency="true" scrolling="no"></iframe>
+
+  {% endblock content %}
