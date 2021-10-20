@@ -3,6 +3,10 @@
 
 {% block content %}
 <h3 class="text-center mt-5 mb-5">Оформление заказа</h3>
+<h3 class="text-center mt-5 mb-5">Внимание если вы не авторизованы будет ошибка при оформлении заказа.</h3>
+<a href="{% url 'login' %}"><h3 class="text-center mt-5 mb-5">Ссылка на авторизацию.</h3></a>
+<a href="{% url 'registration' %}"><h3 class="text-center mt-5 mb-5">Ссылка на регистрацию.</h3></a>
+
 <table class="table">
   <thead>
     <tr>
@@ -17,8 +21,8 @@
   {% for item in cart.products.all %}
     <tr>
       <th scope="row">{{ item.content_object.title }}</th>
-      <td class="w-25"><img src="{{ item.content_object.image.url }}" class="img-fluid"></td>
-      <td>{{ item.content_object.price }} руб.</td>
+      <td class="w-25"><img src="{{ item.product.image.url }}" class="img-fluid"></td>
+      <td>{{ item.product.price }} руб.</td>
       <td>
         <td>{{ item.final_price }} руб.</td>
     </tr>

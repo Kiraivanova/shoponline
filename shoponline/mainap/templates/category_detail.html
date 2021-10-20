@@ -1,8 +1,24 @@
 {% extends 'base.html' %}
+{% load search_filter %}
 
+{% block productfilter %}
 
+      <form class="d-flex mt-3" action="{% url 'category_detail' slug=category.slug %}" method="GET">
+        <input class="form-control me-2" name="search" type="search" placeholder="Поиск товара" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Поиск</button>
+      </form>
+    <hr>
+    <form action="{% url 'category_detail' slug=category.slug %}" method="GET">
+        {{ category|product_spec }}
+    <p class="text-center">
+        <button class="btn btn-outline-success" type="submit">Поиск</button>
+        <button class="btn btn-outline-info" type="submit">Сбросить</button>
+    </p>
+    </form>
+
+{% endblock productfilter %}
 {% block content %}
-    <nav aria-label="breadcrumb" class="mt-3">
+    <nav aria-label="breadcrumb" class="mt-5">
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{% url 'base' %}">Главная</a></li>
         <li class="breadcrumb-item active">{{ category.name }}</li>
@@ -18,7 +34,7 @@
           <a href="{{ product.get_absolute_url }}">{{ product.title }}</a>
         </h4>
         <h5>{{ product.price }} руб.</h5>
-              <a href="{% url 'add_to_cart' ct_model=product.get_model_name slug=product.slug %}">
+              <a href="{% url 'add_to_cart' slug=product.slug %}">
       <button class="btn btn-danger">Добавить в корзину</button>
       </div>
     </div>
@@ -27,3 +43,4 @@
 </div>
 
 {% endblock content %}
+

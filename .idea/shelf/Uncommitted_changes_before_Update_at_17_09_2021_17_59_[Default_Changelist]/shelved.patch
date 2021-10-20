@@ -1,0 +1,168 @@
+Index: .gitgnore
+===================================================================
+diff --git a/.gitgnore b/.gitgnore
+deleted file mode 100644
+--- a/.gitgnore	(revision f8042eb72e670ff90045bb2381c9f0ac9e13f121)
++++ /dev/null	(revision f8042eb72e670ff90045bb2381c9f0ac9e13f121)
+@@ -1,2 +0,0 @@
+-db.sqlite3
+-*/__pycache__/
+Index: shoponline/mainap/templates/base.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{% load static %}\r\n<!DOCTYPE html>\r\n<html lang=\"ru\">\r\n\r\n<head>\r\n\r\n  <meta charset=\"utf-8\">\r\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">\r\n  <meta name=\"description\" content=\"\">\r\n  <meta name=\"author\" content=\"\">\r\n\r\n  <title>Shop Homepage - Start Bootstrap Template</title>\r\n\r\n  <!-- Bootstrap core CSS -->\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css\" integrity=\"sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm\" crossorigin=\"anonymous\">\r\n\r\n  <!-- Custom styles for this template -->\r\n  <link href=\"css/shop-homepage.css\" rel=\"stylesheet\">\r\n\r\n</head>\r\n<style>\r\n    body {\r\n      padding-top: 56px;\r\n    }\r\n</style>\r\n<body>\r\n\r\n  <!-- Navigation -->\r\n  <nav class=\"navbar navbar-expand-lg navbar-dark bg-dark fixed-top\">\r\n    <div class=\"container\">\r\n      <a class=\"navbar-brand\" href=\"{% url 'base' %}\">Shop Plate</a>\r\n      <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarResponsive\" aria-controls=\"navbarResponsive\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n        <span class=\"navbar-toggler-icon\"></span>\r\n      </button>\r\n      <div class=\"collapse navbar-collapse\" id=\"navbarResponsive\">\r\n        <ul class=\"navbar-nav ml-auto\">\r\n          <li class=\"nav-item\">\r\n            <a class=\"nav-link\" href=\"{% url 'cart' %}\">Корзина <span class=\"badge badge-pill badge-danger\">{{ cart.products.count }}</span></a>\r\n          </li>\r\n        </ul>\r\n      </div>\r\n    </div>\r\n  </nav>\r\n\r\n  <!-- Page Content -->\r\n  <div class=\"container\">\r\n\r\n    <div class=\"row\">\r\n\r\n      <div class=\"col-lg-3 mt-5\">\r\n        <div class=\"list-group\">\r\n          {% for category in categories %}\r\n          <a href=\"{{ category.url }}\" class=\"list-group-item\">{{ category.name }} ({{ category.count }})</a>\r\n          {% endfor %}\r\n        </div>\r\n\r\n      </div>\r\n      <!-- /.col-lg-3 -->\r\n\r\n      <div class=\"col-lg-9\">\r\n        {% block content %}\r\n        {% if messages %}\r\n            {% for message in messages %}\r\n              <div class=\"alert alert-success alert-dismissible fade show mt-3\" role=\"alert\">\r\n                <strong>{{ message }}</strong>\r\n                <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">\r\n                  <span aria-hidden=\"true\">&times;</span>\r\n                </button>\r\n              </div>\r\n            {% endfor %}\r\n        {% endif %}\r\n          <div id=\"carouselExampleIndicators\" class=\"carousel slide my-4\" data-ride=\"carousel\">\r\n          <ol class=\"carousel-indicators\">\r\n            <li data-target=\"#carouselExampleIndicators\" data-slide-to=\"0\" class=\"active\"></li>\r\n            <li data-target=\"#carouselExampleIndicators\" data-slide-to=\"1\"></li>\r\n            <li data-target=\"#carouselExampleIndicators\" data-slide-to=\"2\"></li>\r\n          </ol>\r\n\r\n              <div class=\"carousel-inner\" role=\"listbox\">\r\n            <div class=\"carousel-item active\">\r\n                <a href=\"products/plate/plates/\"><img class=\"d-block img-fluid\" src=\"http://127.0.0.1:8000/media/%D0%A1%D0%B5%D0%B2%D1%80%D0%B8%D0%B7_%D1%81%D1%82%D0%BE%D0%BB%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BD%D0%B0_6_%D0%BF%D0%B5%D1%80%D1%81._25_%D0%BF%D1%80%D0%B5%D0%B4._%D0%90%D0%BB%D1%8F%D1%81%D0%BA%D0%B0_2731_e5XvF99.png\" alt=\"First slide\"></a>\r\n            </div>\r\n            <div class=\"carousel-item\">\r\n                <a href=\"products/plate/salatnik/\"><img class=\"d-block img-fluid\" src=\"http://127.0.0.1:8000/media/%D0%A1%D0%B0%D0%BB%D0%B0%D1%82%D0%BD%D0%B8%D0%BA_17%D1%81%D0%BC._%D0%90%D0%BB%D1%8F%D1%81%D0%BA%D0%B0__2731_z7LM7Ei.png\" alt=\"Second slide\"></a>\r\n            </div>\r\n            <div class=\"carousel-item\">\r\n                <a href=\"products/plate/teapot\"><img class=\"d-block img-fluid\" src=\"http://127.0.0.1:8000/media/%D0%A7%D0%B0%D0%B9%D0%BD%D0%B8%D0%BA__1.15_%D0%BB._%D0%90%D0%BB%D1%8F%D1%81%D0%BA%D0%B0___2731_I7Ps0YU.png\" alt=\"Third slide\"></a>\r\n            </div>\r\n          </div>\r\n          <a class=\"carousel-control-prev\" href=\"#carouselExampleIndicators\" role=\"button\" data-slide=\"prev\">\r\n            <span class=\"carousel-control-prev-icon\" aria-hidden=\"true\"></span>\r\n            <span class=\"sr-only\">Previous</span>\r\n          </a>\r\n          <a class=\"carousel-control-next\" href=\"#carouselExampleIndicators\" role=\"button\" data-slide=\"next\">\r\n            <span class=\"carousel-control-next-icon\" aria-hidden=\"true\"></span>\r\n            <span class=\"sr-only\">Next</span>\r\n          </a>\r\n          </div>\r\n\r\n<div class=\"row\">\r\n          {% for product in products %}\r\n          <div class=\"col-lg-4 col-md-6 mb-4\">\r\n            <div class=\"card h-100\">\r\n              <a href=\"{{ product.get_absolute_url }}\"><img class=\"card-img-top\" src=\"{{ product.image.url }}\" class=\"img-fluid\"></a>\r\n              <div class=\"card-body\">\r\n                <h4 class=\"card-title\">\r\n                  <a href=\"{{ product.get_absolute_url }}\">{{ product.title }}</a>\r\n                </h4>\r\n                <h5>{{ product.price }} руб.</h5>\r\n                <a href=\"{% url 'add_to_cart' ct_model=product.get_model_name slug=product.slug %}\">\r\n                  <button class=\"btn btn-danger\">Добавить в корзину</button>\r\n                </a>\r\n              </div>\r\n            </div>\r\n          </div>\r\n          {% endfor %}\r\n        </div>\r\n\r\n      {% endblock content %}\r\n      </div>\r\n      <!-- /.col-lg-9 -->\r\n\r\n    </div>\r\n    <!-- /.row -->\r\n\r\n  </div>\r\n  <!-- /.container -->\r\n\r\n  <!-- Footer -->\r\n  <footer class=\"py-5 bg-dark\">\r\n    <div class=\"container\">\r\n      <p class=\"m-0 text-center text-white\">Copyright &copy; Your Website 2021</p>\r\n    </div>\r\n    <!-- /.container -->\r\n  </footer>\r\n\r\n  <!-- Bootstrap core JavaScript -->\r\n<script src=\"https://code.jquery.com/jquery-3.2.1.slim.min.js\" integrity=\"sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN\" crossorigin=\"anonymous\"></script>\r\n<script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js\" integrity=\"sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl\" crossorigin=\"anonymous\"></script>\r\n\r\n</body>\r\n\r\n</html>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/shoponline/mainap/templates/base.html b/shoponline/mainap/templates/base.html
+--- a/shoponline/mainap/templates/base.html	(revision f8042eb72e670ff90045bb2381c9f0ac9e13f121)
++++ b/shoponline/mainap/templates/base.html	(date 1631838143143)
+@@ -78,13 +78,13 @@
+ 
+               <div class="carousel-inner" role="listbox">
+             <div class="carousel-item active">
+-                <a href="products/plate/plates/"><img class="d-block img-fluid" src="http://127.0.0.1:8000/media/%D0%A1%D0%B5%D0%B2%D1%80%D0%B8%D0%B7_%D1%81%D1%82%D0%BE%D0%BB%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BD%D0%B0_6_%D0%BF%D0%B5%D1%80%D1%81._25_%D0%BF%D1%80%D0%B5%D0%B4._%D0%90%D0%BB%D1%8F%D1%81%D0%BA%D0%B0_2731_e5XvF99.png" alt="First slide"></a>
++                <a href="products/plate/plates/"><img class="d-block img-fluid" src="http://127.0.0.1:8000/media/%D0%A1%D0%B5%D0%B2%D1%80%D0%B8%D0%B7_%D1%81%D1%82%D0%BE%D0%BB%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BD%D0%B0_6_%D0%BF%D0%B5%D1%80%D1%81._25_%D0%BF%D1%80%D0%B5%D0%B4._%D0%90%D0%BB%D1%8F%D1%81%D0%BA%D0%B0_2731.png" alt="First slide"></a>
+             </div>
+             <div class="carousel-item">
+-                <a href="products/plate/salatnik/"><img class="d-block img-fluid" src="http://127.0.0.1:8000/media/%D0%A1%D0%B0%D0%BB%D0%B0%D1%82%D0%BD%D0%B8%D0%BA_17%D1%81%D0%BC._%D0%90%D0%BB%D1%8F%D1%81%D0%BA%D0%B0__2731_z7LM7Ei.png" alt="Second slide"></a>
++                <a href="products/plate/teapot/"><img class="d-block img-fluid" src="http://127.0.0.1:8000/media/%D0%A7%D0%B0%D0%B9%D0%BD%D0%B8%D0%BA__1.15_%D0%BB._%D0%90%D0%BB%D1%8F%D1%81%D0%BA%D0%B0___2731.png" alt="Second slide"></a>
+             </div>
+             <div class="carousel-item">
+-                <a href="products/plate/teapot"><img class="d-block img-fluid" src="http://127.0.0.1:8000/media/%D0%A7%D0%B0%D0%B9%D0%BD%D0%B8%D0%BA__1.15_%D0%BB._%D0%90%D0%BB%D1%8F%D1%81%D0%BA%D0%B0___2731_I7Ps0YU.png" alt="Third slide"></a>
++                <a href="products/plate/plate"><img class="d-block img-fluid" src="http://127.0.0.1:8000/media/%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D0%B7_%D1%81%D1%82%D0%BE%D0%BB%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BD%D0%B0_6%D0%BF%D0%B5%D1%80%D1%81.25%D0%BF%D1%80%D0%B5%D0%B4._%D0%91%D0%B5%D1%80%D0%BD%D0%B0%D0%B4%D0%BE%D1%82_%D0%B1%D0%B5%D0%BB%D1%8B%D0%B9.png" alt="Third slide"></a>
+             </div>
+           </div>
+           <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/vcs.xml b/.idea/vcs.xml
+new file mode 100644
+--- /dev/null	(date 1631810956600)
++++ b/.idea/vcs.xml	(date 1631810956600)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="VcsDirectoryMappings">
++    <mapping directory="$PROJECT_DIR$" vcs="Git" />
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/inspectionProfiles/Project_Default.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/inspectionProfiles/Project_Default.xml b/.idea/inspectionProfiles/Project_Default.xml
+new file mode 100644
+--- /dev/null	(date 1631810956539)
++++ b/.idea/inspectionProfiles/Project_Default.xml	(date 1631810956539)
+@@ -0,0 +1,23 @@
++<component name="InspectionProjectProfileManager">
++  <profile version="1.0">
++    <option name="myName" value="Project Default" />
++    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
++      <option name="ignoredPackages">
++        <value>
++          <list size="3">
++            <item index="0" class="java.lang.String" itemvalue="Django" />
++            <item index="1" class="java.lang.String" itemvalue="psycopg2" />
++            <item index="2" class="java.lang.String" itemvalue="Pillow" />
++          </list>
++        </value>
++      </option>
++    </inspection_tool>
++    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
++      <option name="ignoredIdentifiers">
++        <list>
++          <option value="bot.*" />
++        </list>
++      </option>
++    </inspection_tool>
++  </profile>
++</component>
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"78eb5e79-baff-4f19-86ea-71d7a63f92f9\" name=\"Default Changelist\" comment=\"\" />\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitSEFilterConfiguration\">\r\n    <file-type-list>\r\n      <filtered-out-file-type name=\"LOCAL_BRANCH\" />\r\n      <filtered-out-file-type name=\"REMOTE_BRANCH\" />\r\n      <filtered-out-file-type name=\"TAG\" />\r\n      <filtered-out-file-type name=\"COMMIT_BY_MESSAGE\" />\r\n    </file-type-list>\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"1yCH3ULpexv0VqnegPSBGxfp3YR\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\r\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$/venv\" />\r\n  </component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\georg\\PycharmProjects\\shoponline\\venv\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"manage\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"shoponline\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$/shoponline\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/shoponline/manage.py\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Python.manage\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"78eb5e79-baff-4f19-86ea-71d7a63f92f9\" name=\"Default Changelist\" comment=\"\" />\r\n      <created>1631748452082</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1631748452082</updated>\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision f8042eb72e670ff90045bb2381c9f0ac9e13f121)
++++ b/.idea/workspace.xml	(date 1631885534095)
+@@ -1,7 +1,15 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ChangeListManager">
+-    <list default="true" id="78eb5e79-baff-4f19-86ea-71d7a63f92f9" name="Default Changelist" comment="" />
++    <list default="true" id="78eb5e79-baff-4f19-86ea-71d7a63f92f9" name="Default Changelist" comment="">
++      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.gitgnore" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/shoponline/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/shoponline/db.sqlite3" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/shoponline/mainap/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/shoponline/mainap/templates/base.html" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/shoponline/mainap/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/shoponline/mainap/utils.py" afterDir="false" />
++    </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -26,6 +34,7 @@
+   <component name="PropertiesComponent">
+     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
++    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+     <property name="last_opened_file_path" value="$PROJECT_DIR$/venv" />
+   </component>
+   <component name="RecentsManager">
+@@ -35,17 +44,17 @@
+   </component>
+   <component name="RunManager">
+     <configuration name="manage" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+-      <module name="shoponline" />
+       <option name="INTERPRETER_OPTIONS" value="" />
+       <option name="PARENT_ENVS" value="true" />
+       <envs>
+         <env name="PYTHONUNBUFFERED" value="1" />
+       </envs>
+-      <option name="SDK_HOME" value="" />
++      <option name="SDK_HOME" value="C:\Program Files\Python39\python.exe" />
+       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/shoponline" />
+-      <option name="IS_MODULE_SDK" value="true" />
++      <option name="IS_MODULE_SDK" value="false" />
+       <option name="ADD_CONTENT_ROOTS" value="true" />
+       <option name="ADD_SOURCE_ROOTS" value="true" />
++      <module name="" />
+       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/shoponline/manage.py" />
+       <option name="PARAMETERS" value="" />
+       <option name="SHOW_COMMAND_LINE" value="false" />
+@@ -82,5 +91,6 @@
+         </entry>
+       </map>
+     </option>
++    <option name="oldMeFiltersMigrated" value="true" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: shoponline/mainap/utils.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from django.db import models\r\n\r\ndef recalc_cart(cart):\r\n    cart_data = cart.products.aggregate(models.Sum('final_price'), models.Count('id'))\r\n    if cart_data.get('final_price__sum'):\r\n        cart.final_price = cart_data['final_price__sum']\r\n    else:\r\n        cart.final_price = 0\r\n    cart.total_products = cart_data['id__count']\r\n    cart.save()\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/shoponline/mainap/utils.py b/shoponline/mainap/utils.py
+--- a/shoponline/mainap/utils.py	(revision f8042eb72e670ff90045bb2381c9f0ac9e13f121)
++++ b/shoponline/mainap/utils.py	(date 1631795353100)
+@@ -7,4 +7,4 @@
+     else:
+         cart.final_price = 0
+     cart.total_products = cart_data['id__count']
+-    cart.save()
++    cart.save()
+\ No newline at end of file
