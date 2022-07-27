@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth import get_user_model
-from .models import Order
+from .models import Order, Questions, Phone
 
 User = get_user_model()
 
@@ -68,7 +68,7 @@ class RegistrationForm(forms.ModelForm):
     def clean_email(self):
         email = self.cleaned_data['email']
         domain = email.split('.')[-1]
-        if domain in ['zet', 'net']:
+        if not domain in ['ru', 'com']:
             raise forms.ValidationError(f'Регистрация для домена {domain} невозможна')
         if User.objects.filter(email=email).exists():
             raise forms.ValidationError(f'Данный почтовый адрес уже зарегистрирован в системе')
@@ -91,6 +91,22 @@ class RegistrationForm(forms.ModelForm):
         model = User
         fields = ['username', 'password', 'confirm_password', 'first_name', 'last_name', 'address', 'phone', 'email']
 
+
+class QuestionsForm(forms.ModelForm):
+    def clean_email(self):
+        email = self.cleaned_data['email']
+        domain = email.split('.')[-1]
+        if not domain in ['ru', 'com']:
+            raise forms.ValidationError(f'Регистрация для домена {domain} невозможна')
+        return email
+    class Meta:
+        model = Questions
+        fields = ['email', 'comment']
+
+class PhoneForm(forms.ModelForm):
+    class Meta:
+        model = Phone
+        fields = ['phone']
 
 
 

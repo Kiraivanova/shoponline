@@ -1,8 +1,8 @@
 import operator
-
+from django.views.decorators.http import require_POST
 from functools import reduce
 from itertools import chain
-
+from django.utils import timezone
 from django.db import transaction
 from django.db.models import Q
 from django.shortcuts import render
@@ -10,14 +10,31 @@ from django.contrib import messages
 from django.contrib.auth import login, authenticate
 from django.http import HttpResponseRedirect
 from django.views.generic import DetailView, View
-
-from .models import Category, Customer, Cart, CartProduct, Product
+from .models import Category, Customer, Cart, CartProduct, Product, Order, Questions, Phone, Catalog
 from .mixins import CartMixin
-from .forms import OrderForm, LoginForm, RegistrationForm
+from .forms import OrderForm, LoginForm, RegistrationForm, QuestionsForm, PhoneForm
 from .utils import recalc_cart
 
 from specs.models import ProductFeatures
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
+class PaginatorView(CartMixin, View):
+    def post_list(request):
+        object_list = Product.published.all()
+        paginator = Paginator(object_list, 3)  # 3 posts in each page
+        page = request.GET.get('page')
+        try:
+            posts = paginator.page(page)
+        except PageNotAnInteger:
+        # If page is not an integer deliver the first page
+            posts = paginator.page(1)
+        except EmptyPage:
+        # If page is out of range deliver last page of results
+            posts = paginator.page(paginator.num_pages)
+        return render(request,
+                      'base.html',
+                      {'page': page,
+                       'posts': posts})
 
 class MyQ(Q):
 
@@ -92,8 +109,19 @@ class CategoryDetailView(CartMixin, DetailView):
         return context
 
 
-class AddToCartView(CartMixin, View):
+class CatalogDetailView(CartMixin, DetailView):
 
+    model = Catalog
+    context_object_name = 'catalog'
+    template_name = 'catalog_detail.html'
+    slug_url_kwarg = 'slug'
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['catalog'] = self.get_object().category.__class__.objects.all()
+        return context
+
+
+class AddToCartView(CartMixin, View):
     def get(self, request, *args, **kwargs):
         product_slug = kwargs.get('slug')
         product = Product.objects.get(slug=product_slug)
@@ -105,6 +133,7 @@ class AddToCartView(CartMixin, View):
         recalc_cart(self.cart)
         messages.add_message(request, messages.INFO, "Товар успешно добавлен")
         return HttpResponseRedirect('/cart/')
+
 
 
 class DeleteFromCartView(CartMixin, View):
@@ -148,6 +177,34 @@ class CartView(CartMixin, View):
         }
         return render(request, 'cart.html', context)
 
+class QuestionsView(CartMixin, View):
+
+    def get(self, request, *args, **kwargs):
+        form = QuestionsForm(request.POST or None)
+        context = {
+            'form': form
+        }
+        return render(request, 'questions.html', context)
+
+class MakeAnswerOrderView(CartMixin, View):
+
+    @transaction.atomic
+
+    def post(self, request, *args, **kwargs):
+        form = QuestionsForm(request.POST or None)
+        if form.is_valid():
+            new_order = form.save(commit=False)
+            new_order.email = form.cleaned_data['email']
+            new_order.comment = form.cleaned_data['comment']
+            new_order.save()
+            self.cart.in_order = True
+            self.cart.save()
+            new_order.cart = self.cart
+            new_order.save()
+
+            messages.add_message(request, messages.INFO, 'Менеджер в ближайшее время с Вами свяжется')
+            return HttpResponseRedirect('/')
+        return HttpResponseRedirect('/questions/')
 
 class CheckoutView(CartMixin, View):
 
@@ -188,6 +245,33 @@ class MakeOrderView(CartMixin, View):
             return HttpResponseRedirect('/')
         return HttpResponseRedirect('/checkout/')
 
+class PhoneView(CartMixin, View):
+
+    def get(self, request, *args, **kwargs):
+        form = PhoneForm(request.POST or None)
+        context = {
+            'form': form
+        }
+        return render(request, 'questions.html', context)
+
+class PhoneOrderView(CartMixin, View):
+
+    @transaction.atomic
+
+    def post(self, request, *args, **kwargs):
+        form = PhoneForm(request.POST or None)
+        if form.is_valid():
+            new_order = form.save(commit=False)
+            new_order.email = form.cleaned_data['phone']
+            new_order.save()
+            self.cart.in_order = True
+            self.cart.save()
+            new_order.cart = self.cart
+            new_order.save()
+
+            messages.add_message(request, messages.INFO, 'Менеджер в ближайшее время с Вами свяжется')
+            return HttpResponseRedirect('/')
+        return HttpResponseRedirect('/phone/')
 
 class LoginView(CartMixin, View):
 
@@ -263,7 +347,6 @@ class RegistrationView(CartMixin, View):
         return render(request, 'registration.html', context)
 
 
-
 class ProfileView(CartMixin, View):
     def get(self, request, *args, **kwargs):
         customer = Customer.objects.get(user=request.user)
@@ -275,5 +358,13 @@ class ProfileView(CartMixin, View):
             {'orders': orders, 'cart': self.cart, 'categories': categories}
         )
 
+class ReturnView(CartMixin, View):
+     def get(self, request, *args, **kwargs):
+        categories =Category.objects.all()
+        return render(
+            request,
+            'return.html',
+            {'cart': self.cart, 'categories': categories}
+        )
 
 

@@ -3,6 +3,9 @@ from django.contrib.auth import get_user_model
 from django.contrib.contenttypes.models import ContentType
 from django.urls import reverse
 from django.utils import timezone
+from django.db import models
+from django.core.validators import MinValueValidator, MaxValueValidator
+
 
 User = get_user_model()
 
@@ -40,8 +43,7 @@ class Product(models.Model):
 
 
 class CartProduct(models.Model):
-
-    user = models.ForeignKey('Customer', verbose_name='Покупатель', on_delete=models.CASCADE)
+    user = models.ForeignKey('Customer', null=True, verbose_name="Покупатель", on_delete=models.CASCADE)
     cart = models.ForeignKey('Cart', verbose_name='Корзина', on_delete=models.CASCADE, related_name='related_products')
     product = models.ForeignKey(Product, verbose_name='Товар', on_delete=models.CASCADE)
     qty = models.PositiveIntegerField(default=1)
@@ -106,7 +108,7 @@ class Order(models.Model):
     last_name = models.CharField(max_length=255, verbose_name='Фамилия')
     phone = models.CharField(max_length=20, verbose_name='Телефон')
     cart = models.ForeignKey(Cart, verbose_name='Корзина', on_delete=models.CASCADE, null=True, blank=True)
-    address = models.CharField(max_length=1024, verbose_name='Адрес', null=True, blank=True)
+    address = models.CharField(max_length=520, verbose_name='Адрес')
     status = models.CharField(
         max_length=100,
         verbose_name='Статус заказ',
@@ -125,3 +127,29 @@ class Order(models.Model):
 
     def __str__(self):
         return str(self.id)
+
+class Questions(models.Model):
+
+    email = models.CharField(max_length=20, verbose_name='email')
+    comment = models.TextField(verbose_name='Сообщение')
+
+    def __str__(self):
+        return str(self.id)
+
+class Phone(models.Model):
+    phone = models.CharField(max_length=20, verbose_name='Телефон')
+    def __str__(self):
+        return self.title
+
+
+class Catalog(models.Model):
+
+    name = models.CharField(max_length=255, verbose_name='Имя каталога')
+    image = models.ImageField(verbose_name='Изображение')
+    slug = models.SlugField(unique=True)
+
+    def __str__(self):
+        return self.name
+
+    def get_absolute_url(self):
+        return reverse('catalog_detail', kwargs={'slug': self.slug})

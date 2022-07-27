@@ -1,8 +1,6 @@
 from django.urls import path
 from django.contrib.auth.views import LogoutView
 
-
-
 from .views import (
     BaseView,
     ProductDetailView,
@@ -15,7 +13,14 @@ from .views import (
     MakeOrderView,
     LoginView,
     RegistrationView,
-    ProfileView
+    ProfileView,
+    ReturnView,
+    QuestionsView,
+    MakeAnswerOrderView,
+    PhoneView,
+    PhoneOrderView,
+    PaginatorView,
+    CatalogDetailView
 )
 
 urlpatterns = [
@@ -31,5 +36,13 @@ urlpatterns = [
     path('login/', LoginView.as_view(), name='login'),
     path('logout/', LogoutView.as_view(next_page="/"), name='logout'),
     path('registration/', RegistrationView.as_view(), name='registration'),
-    path('profile/', ProfileView.as_view(), name='profile')
+    path('profile/', ProfileView.as_view(), name='profile'),
+    path('return/', ReturnView.as_view(), name='return'),
+    path('questions/', QuestionsView.as_view(), name='questions'),
+    path('make-answer-order/', MakeAnswerOrderView.as_view(), name='make_answer_order'),
+    path('phone/', PhoneView.as_view(), name='phone'),
+    path('phone-order/', PhoneOrderView.as_view(), name='phone_order'),
+    path('', PaginatorView.as_view(), name='base'),
+    path('catalog/<str:slug>/', CatalogDetailView.as_view(), name='catalog_detail')
 ]
+
